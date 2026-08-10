@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#07090d] text-white">
+    <main className="min-h-screen overflow-x-hidden bg-[#070a0f] text-white">
 
       {/* =========================
           BACKGROUND
@@ -10,18 +10,18 @@ export default function Home() {
 
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
 
-        <div className="absolute left-1/2 top-[-300px] h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-orange-500/[0.08] blur-[140px]" />
+        <div className="absolute left-1/2 top-[-180px] h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-orange-500/[0.08] blur-[100px] sm:h-[600px] sm:w-[600px] sm:blur-[140px]" />
 
-        <div className="absolute -left-40 top-[45%] h-[500px] w-[500px] rounded-full bg-orange-600/[0.04] blur-[120px]" />
+        <div className="absolute -left-40 top-[45%] h-[350px] w-[350px] rounded-full bg-orange-600/[0.035] blur-[100px]" />
 
-        <div className="absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-orange-400/[0.04] blur-[120px]" />
+        <div className="absolute -right-40 bottom-0 h-[350px] w-[350px] rounded-full bg-orange-400/[0.035] blur-[100px]" />
 
         <div
-          className="absolute inset-0 opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage:
               "linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
+            backgroundSize: "60px 60px",
           }}
         />
 
@@ -32,55 +32,57 @@ export default function Home() {
           NAVBAR
       ========================= */}
 
-      <header className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-6 lg:px-8">
+      <header className="relative z-30 border-b border-white/[0.05]">
 
-        <Link
-          href="/"
-          className="group flex items-center gap-3"
-        >
+        <div className="mx-auto flex h-[70px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
-          <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-orange-500 text-2xl shadow-[0_0_30px_rgba(249,115,22,0.18)] transition duration-300 group-hover:scale-105">
+          {/* LOGO */}
 
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-300/30 to-transparent" />
+          <Link
+            href="/"
+            className="flex items-center gap-2.5"
+          >
 
-            <span className="relative">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-500 text-xl shadow-lg shadow-orange-500/10">
               🏀
-            </span>
+            </div>
+
+            <div>
+
+              <p className="text-[12px] font-black tracking-[0.12em] sm:text-sm">
+                BASKET NATIONS
+              </p>
+
+              <p className="hidden text-[9px] uppercase tracking-[0.16em] text-gray-600 sm:block">
+                World Basketball Challenge
+              </p>
+
+            </div>
+
+          </Link>
+
+
+          {/* NAVIGATION */}
+
+          <div className="flex items-center gap-2">
+
+            <Link
+              href="/leaderboard"
+              className="hidden rounded-full border border-white/10 px-4 py-2 text-[10px] font-black tracking-wider text-gray-400 transition hover:border-orange-500/30 hover:text-orange-400 sm:block"
+            >
+              LEADERBOARD
+            </Link>
+
+            <Link
+              href="/play"
+              className="rounded-full bg-orange-500 px-4 py-2.5 text-[10px] font-black tracking-wider text-white shadow-lg shadow-orange-500/10 transition hover:bg-orange-400 sm:px-5"
+            >
+              PLAY NOW
+            </Link>
 
           </div>
 
-          <div>
-
-            <h1 className="text-sm font-black tracking-[0.16em]">
-              BASKET NATIONS
-            </h1>
-
-            <p className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.18em] text-gray-500">
-              World Basketball Challenge
-            </p>
-
-          </div>
-
-        </Link>
-
-
-        <nav className="flex items-center gap-2 sm:gap-3">
-
-          <Link
-            href="/leaderboard"
-            className="hidden rounded-full border border-white/10 bg-white/[0.025] px-5 py-2.5 text-xs font-black tracking-wider text-gray-300 transition duration-300 hover:border-orange-500/40 hover:bg-orange-500/5 hover:text-orange-400 sm:block"
-          >
-            LEADERBOARD
-          </Link>
-
-          <Link
-            href="/play"
-            className="rounded-full bg-orange-500 px-5 py-2.5 text-xs font-black tracking-wider text-white shadow-lg shadow-orange-500/10 transition duration-300 hover:-translate-y-0.5 hover:bg-orange-400 hover:shadow-orange-500/20"
-          >
-            PLAY NOW
-          </Link>
-
-        </nav>
+        </div>
 
       </header>
 
@@ -89,22 +91,24 @@ export default function Home() {
           HERO
       ========================= */}
 
-      <section className="relative mx-auto max-w-7xl px-5 pb-20 pt-14 sm:px-6 sm:pt-20 lg:px-8 lg:pb-28">
+      <section className="mx-auto max-w-7xl px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pb-28">
 
-        <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
 
 
-          {/* LEFT */}
+          {/* =====================
+              LEFT CONTENT
+          ===================== */}
 
           <div className="relative z-10">
 
             {/* BADGE */}
 
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/[0.06] px-4 py-2">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/[0.06] px-3 py-1.5 sm:mb-7 sm:px-4 sm:py-2">
 
-              <span className="flex h-2 w-2 rounded-full bg-orange-400 shadow-[0_0_10px_rgba(249,115,22,0.8)]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-orange-400 shadow-[0_0_10px_rgba(249,115,22,0.8)] sm:h-2 sm:w-2" />
 
-              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-orange-400 sm:text-xs">
+              <span className="text-[9px] font-black uppercase tracking-[0.2em] text-orange-400 sm:text-xs sm:tracking-[0.25em]">
                 Global Competition
               </span>
 
@@ -113,30 +117,30 @@ export default function Home() {
 
             {/* HEADLINE */}
 
-            <h2 className="max-w-3xl text-[3.8rem] font-black leading-[0.88] tracking-[-0.055em] sm:text-7xl lg:text-[6.8rem]">
+            <h1 className="max-w-3xl text-[3.25rem] font-black leading-[0.88] tracking-[-0.055em] sm:text-7xl lg:text-[6.5rem]">
 
               SHOOT.
-
               <br />
 
               SCORE.
-
               <br />
 
               <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
                 REPRESENT.
               </span>
 
-            </h2>
+            </h1>
 
 
             {/* DESCRIPTION */}
 
-            <p className="mt-8 max-w-xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
+            <p className="mt-6 max-w-lg text-sm leading-6 text-gray-400 sm:mt-8 sm:text-lg sm:leading-8">
 
-              Step onto the court and represent your
-              country. You have two minutes to make
-              as many baskets as possible.
+              Step onto the virtual court and represent your country.
+
+              <br className="hidden sm:block" />
+
+              You have two minutes to make as many baskets as possible.
 
               <span className="font-semibold text-gray-300">
                 {" "}Every basket counts.
@@ -145,13 +149,13 @@ export default function Home() {
             </p>
 
 
-            {/* CTA */}
+            {/* BUTTONS */}
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
 
               <Link
                 href="/play"
-                className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-orange-500 px-7 py-4 text-sm font-black tracking-wide shadow-[0_15px_40px_rgba(249,115,22,0.16)] transition duration-300 hover:-translate-y-1 hover:bg-orange-400 hover:shadow-[0_20px_50px_rgba(249,115,22,0.24)]"
+                className="flex h-14 w-full items-center justify-center gap-3 rounded-2xl bg-orange-500 px-6 text-sm font-black tracking-wide shadow-[0_15px_40px_rgba(249,115,22,0.15)] transition hover:-translate-y-1 hover:bg-orange-400 sm:w-auto"
               >
 
                 <span className="text-xl">
@@ -160,7 +164,7 @@ export default function Home() {
 
                 PLAY FOR YOUR COUNTRY
 
-                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                <span>
                   →
                 </span>
 
@@ -169,51 +173,55 @@ export default function Home() {
 
               <Link
                 href="/leaderboard"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.025] px-7 py-4 text-sm font-black tracking-wide text-gray-300 transition duration-300 hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
+                className="flex h-14 w-full items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.025] px-6 text-sm font-black text-gray-300 transition hover:border-white/20 hover:text-white sm:w-auto"
               >
-                🏆 VIEW LEADERBOARD
+
+                🏆
+
+                LEADERBOARD
+
               </Link>
 
             </div>
 
 
-            {/* QUICK STATS */}
+            {/* STATS */}
 
-            <div className="mt-12 grid max-w-xl grid-cols-3 border-y border-white/10 py-5">
+            <div className="mt-9 grid max-w-lg grid-cols-3 border-y border-white/[0.08] py-4 sm:mt-12 sm:py-5">
 
-              <div className="border-r border-white/10">
+              <div>
 
-                <p className="text-2xl font-black sm:text-3xl">
+                <p className="text-xl font-black sm:text-3xl">
                   2:00
                 </p>
 
-                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-600 sm:text-xs">
+                <p className="mt-1 text-[8px] font-bold uppercase tracking-[0.13em] text-gray-600 sm:text-xs">
                   Game Time
                 </p>
 
               </div>
 
 
-              <div className="border-r border-white/10 pl-4 sm:pl-7">
+              <div className="border-l border-white/10 pl-4 sm:pl-7">
 
-                <p className="text-2xl font-black sm:text-3xl">
+                <p className="text-xl font-black sm:text-3xl">
                   +1
                 </p>
 
-                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-600 sm:text-xs">
+                <p className="mt-1 text-[8px] font-bold uppercase tracking-[0.13em] text-gray-600 sm:text-xs">
                   Every Basket
                 </p>
 
               </div>
 
 
-              <div className="pl-4 sm:pl-7">
+              <div className="border-l border-white/10 pl-4 sm:pl-7">
 
-                <p className="text-2xl font-black sm:text-3xl">
+                <p className="text-xl font-black sm:text-3xl">
                   🌎
                 </p>
 
-                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-600 sm:text-xs">
+                <p className="mt-1 text-[8px] font-bold uppercase tracking-[0.13em] text-gray-600 sm:text-xs">
                   Worldwide
                 </p>
 
@@ -224,65 +232,57 @@ export default function Home() {
           </div>
 
 
-          {/* RIGHT — BASKETBALL VISUAL */}
+          {/* =====================
+              BASKETBALL AREA
+          ===================== */}
 
-          <div className="relative flex min-h-[450px] items-center justify-center lg:min-h-[600px]">
-
-            {/* ORANGE GLOW */}
-
-            <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/10 blur-[90px] sm:h-[430px] sm:w-[430px]" />
+          <div className="relative mx-auto mt-2 flex h-[350px] w-full max-w-[420px] items-center justify-center sm:h-[500px] lg:mt-0 lg:h-[600px]">
 
 
-            {/* OUTER RING */}
+            {/* GLOW */}
 
-            <div className="absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-orange-500/10 sm:h-[470px] sm:w-[470px]" />
-
-            <div className="absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-orange-500/10 sm:h-[380px] sm:w-[380px]" />
+            <div className="absolute h-[220px] w-[220px] rounded-full bg-orange-500/10 blur-[70px] sm:h-[400px] sm:w-[400px] sm:blur-[100px]" />
 
 
-            {/* ORBIT DOTS */}
+            {/* RINGS */}
 
-            <div className="absolute left-[12%] top-[30%] h-2 w-2 rounded-full bg-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.8)]" />
+            <div className="absolute h-[260px] w-[260px] rounded-full border border-orange-500/10 sm:h-[450px] sm:w-[450px]" />
 
-            <div className="absolute right-[14%] top-[25%] h-1.5 w-1.5 rounded-full bg-orange-500/60" />
-
-            <div className="absolute bottom-[25%] right-[17%] h-2 w-2 rounded-full bg-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.6)]" />
-
-            <div className="absolute bottom-[22%] left-[15%] h-1.5 w-1.5 rounded-full bg-white/20" />
+            <div className="absolute h-[210px] w-[210px] rounded-full border border-dashed border-orange-500/10 sm:h-[350px] sm:w-[350px]" />
 
 
-            {/* BASKETBALL */}
+            {/* BALL */}
 
-            <div className="relative z-10 flex h-64 w-64 items-center justify-center rounded-full border border-orange-400/20 bg-gradient-to-br from-orange-500/[0.13] to-transparent shadow-[inset_0_0_80px_rgba(249,115,22,0.07),0_0_80px_rgba(249,115,22,0.08)] sm:h-80 sm:w-80">
+            <div className="relative z-10 flex h-[190px] w-[190px] items-center justify-center rounded-full border border-orange-400/20 bg-orange-500/[0.06] shadow-[0_0_70px_rgba(249,115,22,0.08)] sm:h-[290px] sm:w-[290px]">
 
-              <div className="text-[150px] drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)] sm:text-[190px]">
+              <div className="text-[105px] drop-shadow-[0_20px_30px_rgba(0,0,0,0.7)] sm:text-[160px]">
                 🏀
               </div>
 
             </div>
 
 
-            {/* COUNTRY CARD */}
+            {/* COUNTRY */}
 
-            <div className="absolute bottom-3 left-0 z-20 rounded-2xl border border-white/10 bg-[#10141c]/95 p-4 shadow-2xl backdrop-blur-xl sm:bottom-8 sm:left-2 sm:p-5">
+            <div className="absolute bottom-0 left-2 z-20 rounded-xl border border-white/10 bg-[#10141c]/95 px-3 py-3 shadow-2xl backdrop-blur-xl sm:bottom-5 sm:left-0 sm:rounded-2xl sm:px-5 sm:py-4">
 
-              <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-600">
+              <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-gray-600 sm:text-[9px]">
                 Your Country
               </p>
 
-              <div className="mt-2.5 flex items-center gap-3">
+              <div className="mt-1.5 flex items-center gap-2 sm:mt-2.5 sm:gap-3">
 
-                <span className="text-3xl">
+                <span className="text-2xl sm:text-3xl">
                   🇮🇩
                 </span>
 
                 <div>
 
-                  <p className="font-black">
+                  <p className="text-sm font-black sm:text-base">
                     Indonesia
                   </p>
 
-                  <p className="mt-0.5 text-[10px] font-bold text-emerald-400">
+                  <p className="text-[8px] font-bold text-emerald-400 sm:text-[10px]">
                     ● READY TO PLAY
                   </p>
 
@@ -293,15 +293,15 @@ export default function Home() {
             </div>
 
 
-            {/* GLOBAL CARD */}
+            {/* GLOBAL */}
 
-            <div className="absolute right-0 top-10 z-20 rounded-2xl border border-white/10 bg-[#10141c]/95 px-4 py-3 shadow-2xl backdrop-blur-xl sm:right-3 sm:top-16">
+            <div className="absolute right-2 top-2 z-20 rounded-xl border border-white/10 bg-[#10141c]/95 px-3 py-2.5 shadow-2xl backdrop-blur-xl sm:right-0 sm:top-8 sm:rounded-2xl sm:px-4 sm:py-3">
 
-              <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-600">
+              <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-gray-600">
                 Competition
               </p>
 
-              <p className="mt-1 font-black">
+              <p className="mt-1 text-xs font-black sm:text-sm">
                 🌎 GLOBAL
               </p>
 
@@ -315,23 +315,23 @@ export default function Home() {
 
 
       {/* =========================
-          FEATURE STRIP
+          FEATURES
       ========================= */}
 
-      <section className="relative border-y border-white/[0.06] bg-white/[0.015]">
+      <section className="border-y border-white/[0.06] bg-white/[0.015]">
 
-        <div className="mx-auto max-w-7xl px-5 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-3 sm:gap-4 md:grid-cols-3">
 
 
-            {/* CARD 1 */}
+            {/* PLAY */}
 
-            <div className="group rounded-2xl border border-white/[0.07] bg-[#0c1017] p-6 transition duration-300 hover:-translate-y-1 hover:border-orange-500/20">
+            <div className="rounded-2xl border border-white/[0.07] bg-[#0c1017] p-5 sm:p-6">
 
               <div className="flex items-center justify-between">
 
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-500/10 text-xl">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/10 text-lg">
                   🏀
                 </div>
 
@@ -341,25 +341,24 @@ export default function Home() {
 
               </div>
 
-              <h3 className="mt-5 text-lg font-black">
+              <h2 className="mt-4 text-base font-black sm:text-lg">
                 PLAY THE GAME
-              </h3>
+              </h2>
 
-              <p className="mt-2 text-sm leading-6 text-gray-500">
-                Take the court and make as many
-                baskets as possible before time runs out.
+              <p className="mt-2 text-xs leading-5 text-gray-500 sm:text-sm sm:leading-6">
+                Take the court and make as many baskets as possible before time runs out.
               </p>
 
             </div>
 
 
-            {/* CARD 2 */}
+            {/* SCORE */}
 
-            <div className="group rounded-2xl border border-white/[0.07] bg-[#0c1017] p-6 transition duration-300 hover:-translate-y-1 hover:border-orange-500/20">
+            <div className="rounded-2xl border border-white/[0.07] bg-[#0c1017] p-5 sm:p-6">
 
               <div className="flex items-center justify-between">
 
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-500/10 text-xl">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/10 text-lg">
                   🎯
                 </div>
 
@@ -369,25 +368,24 @@ export default function Home() {
 
               </div>
 
-              <h3 className="mt-5 text-lg font-black">
+              <h2 className="mt-4 text-base font-black sm:text-lg">
                 SCORE POINTS
-              </h3>
+              </h2>
 
-              <p className="mt-2 text-sm leading-6 text-gray-500">
-                Every successful basket gives your
-                country another point on the global board.
+              <p className="mt-2 text-xs leading-5 text-gray-500 sm:text-sm sm:leading-6">
+                Every successful basket gives your country another point.
               </p>
 
             </div>
 
 
-            {/* CARD 3 */}
+            {/* REPRESENT */}
 
-            <div className="group rounded-2xl border border-white/[0.07] bg-[#0c1017] p-6 transition duration-300 hover:-translate-y-1 hover:border-orange-500/20">
+            <div className="rounded-2xl border border-white/[0.07] bg-[#0c1017] p-5 sm:p-6">
 
               <div className="flex items-center justify-between">
 
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-500/10 text-xl">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/10 text-lg">
                   🏆
                 </div>
 
@@ -397,13 +395,12 @@ export default function Home() {
 
               </div>
 
-              <h3 className="mt-5 text-lg font-black">
+              <h2 className="mt-4 text-base font-black sm:text-lg">
                 REPRESENT YOUR NATION
-              </h3>
+              </h2>
 
-              <p className="mt-2 text-sm leading-6 text-gray-500">
-                Your performance contributes to your
-                country&apos;s position in the worldwide ranking.
+              <p className="mt-2 text-xs leading-5 text-gray-500 sm:text-sm sm:leading-6">
+                Help your country climb the worldwide leaderboard.
               </p>
 
             </div>
@@ -419,35 +416,27 @@ export default function Home() {
           FINAL CTA
       ========================= */}
 
-      <section className="mx-auto max-w-7xl px-5 py-20 text-center sm:px-6 lg:px-8">
+      <section className="px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
 
-        <div className="mx-auto max-w-3xl">
+        <p className="text-[10px] font-black uppercase tracking-[0.25em] text-orange-400 sm:text-xs sm:tracking-[0.3em]">
+          The world is watching
+        </p>
 
-          <p className="text-xs font-black uppercase tracking-[0.3em] text-orange-400">
-            The world is watching
-          </p>
+        <h2 className="mt-3 text-3xl font-black tracking-tight sm:mt-4 sm:text-5xl">
+          READY TO REPRESENT?
+        </h2>
 
-          <h3 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
-            READY TO REPRESENT?
-          </h3>
+        <p className="mx-auto mt-4 max-w-xl text-xs leading-6 text-gray-500 sm:mt-5 sm:text-base sm:leading-7">
+          Step onto the virtual court, chase your highest score, and help your country climb the leaderboard.
+        </p>
 
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-500 sm:text-base">
-            Step onto the virtual court, chase your highest
-            score, and help your country climb the leaderboard.
-          </p>
-
-          <Link
-            href="/play"
-            className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-orange-500 px-8 py-4 text-sm font-black shadow-lg shadow-orange-500/10 transition duration-300 hover:-translate-y-1 hover:bg-orange-400"
-          >
-            🏀 START PLAYING
-
-            <span>
-              →
-            </span>
-          </Link>
-
-        </div>
+        <Link
+          href="/play"
+          className="mt-7 inline-flex h-14 items-center gap-3 rounded-2xl bg-orange-500 px-7 text-sm font-black shadow-lg shadow-orange-500/10 transition hover:-translate-y-1 hover:bg-orange-400"
+        >
+          🏀 START PLAYING
+          →
+        </Link>
 
       </section>
 
@@ -458,22 +447,22 @@ export default function Home() {
 
       <footer className="border-t border-white/[0.06]">
 
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-7 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-6 sm:px-6 md:flex-row md:justify-between lg:px-8">
 
-          <div>
+          <div className="text-center md:text-left">
 
             <p className="text-xs font-black tracking-[0.15em]">
               BASKET NATIONS
             </p>
 
-            <p className="mt-1 text-[10px] text-gray-600">
+            <p className="mt-1 text-[9px] text-gray-600">
               World Basketball Challenge
             </p>
 
           </div>
 
 
-          <div className="flex items-center gap-5 text-xs font-bold text-gray-600">
+          <div className="flex items-center gap-4 text-[10px] font-bold text-gray-600 sm:gap-5 sm:text-xs">
 
             <Link
               href="/play"
